@@ -163,7 +163,7 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 sequenceDiagram
     actor U as Usuário
     participant I as Interface
-    participant C as Control
+    participant C as Controle
     participant B as Banco de Dados
 
     U->>I: Iniciar cadastro (e-mail, senha, categoria)
