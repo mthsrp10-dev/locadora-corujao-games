@@ -1,17 +1,48 @@
-# 🎮 Sistema da Locadora Corujão Games
 
-> Universidade Federal do Amazonas (UFAM) · Instituto de Ciências Exatas e Tecnologia (ICET)
-> Curso de Engenharia de Software · Itacoatiara/AM · 2026
+
+<div align="center">
+
+<h1>🎮 Sistema da Locadora Corujão Games</h1>
+
+<p><i>Documentação de requisitos e modelagem UML</i></p>
+
+<p>
+  <img src="https://img.shields.io/badge/UFAM-ICET-1a7f37?style=for-the-badge" alt="UFAM ICET">
+  <img src="https://img.shields.io/badge/Engenharia%20de%20Software-2026-0969da?style=for-the-badge" alt="Engenharia de Software 2026">
+  <img src="https://img.shields.io/badge/Padr%C3%A3o-ISO%2FIEC%2FIEEE%2029148-8250df?style=for-the-badge" alt="ISO/IEC/IEEE 29148">
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Requisitos-8%20RF%20%7C%203%20RNF%20%7C%204%20RN-fb8500?style=flat-square" alt="Requisitos">
+  <img src="https://img.shields.io/badge/Diagramas-UML-e63946?style=flat-square" alt="Diagramas UML">
+  <img src="https://img.shields.io/badge/Status-conclu%C3%addo-2ea44f?style=flat-square" alt="Status">
+</p>
+
+<p>
+  <a href="#1-introdução"><b>Introdução</b></a> &nbsp;•&nbsp;
+  <a href="#2-requisitos-gerais-do-software"><b>Requisitos</b></a> &nbsp;•&nbsp;
+  <a href="#3-diagramas-uml"><b>Diagramas UML</b></a>
+</p>
+
+<sub>Universidade Federal do Amazonas (UFAM) · Instituto de Ciências Exatas e Tecnologia (ICET)<br>
+Curso de Engenharia de Software · Itacoatiara/AM · 2026</sub>
+
+</div>
+
+---
 
 ## 👥 Equipe
 
-| Integrantes |
-|---|
-| Guilherme Alencar dos Santos |
-| Kairlly de Sousa Magalhães |
-| Matheus Raulino Pucu |
+<table align="center">
+  <tr>
+    <th align="center">Integrantes</th>
+  </tr>
+  <tr><td align="center">👨‍💻 Guilherme Alencar dos Santos</td></tr>
+  <tr><td align="center">👩‍💻 Kairlly de Sousa Magalhães</td></tr>
+  <tr><td align="center">👨‍💻 Matheus Raulino Pucu</td></tr>
+</table>
 
-**Disciplina:** Engenharia de Requisitos · **Professor:** Walter Viana
+<p align="center"><b>Disciplina:</b> Engenharia de Requisitos &nbsp;·&nbsp; <b>Professor:</b> Walter Viana</p>
 
 ---
 
@@ -31,9 +62,12 @@ O **Sistema da Locadora Corujão Games** é uma aplicação web para apoiar a ge
 
 Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de busca, reserva jogos e consoles e solicita locações. A reserva gera automaticamente um **TOKEN de retirada**. O **atendente** analisa as solicitações, libera as locações mediante validação de pagamento e do histórico do cliente e registra as devoluções, com cálculo automático de multa em caso de atraso. O **gerente** administra o inventário e o cadastro de jogos, consoles e funcionários.
 
+>
 > **Fora do escopo:** o sistema não contempla venda de produtos. O processamento financeiro limita-se à validação de pagamento e de pendências para a liberação da locação.
 
-**Termos e abreviações**
+<details>
+<summary><b>📖 Termos e abreviações</b></summary>
+<br>
 
 | Sigla | Significado |
 |---|---|
@@ -44,13 +78,26 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 | UML | Unified Modeling Language |
 | TOKEN | Código gerado pelo sistema para autorizar a retirada de um item reservado ou locado |
 
+</details>
+
 ### 1.2. Descrição dos Usuários
 
-| Perfil | Descrição |
-|---|---|
-| 👤 **Cliente** | Pessoa que deseja consultar o catálogo, reservar e locar jogos e consoles e acompanhar suas reservas. |
-| 🧑‍💼 **Atendente** | Funcionário responsável por cadastrar clientes presencialmente, analisar solicitações de locação, liberar locações, avaliar o histórico do cliente e registrar devoluções e multas. |
-| 🛠️ **Gerente** | Funcionário responsável pela gestão do inventário e pelo cadastro de jogos, consoles e funcionários. Herda as permissões do atendente (generalização no diagrama de casos de uso). |
+<table>
+  <tr>
+    <td width="33%" valign="top" align="center">
+      <h3>👤 Cliente</h3>
+      Pessoa que deseja consultar o catálogo, reservar e locar jogos e consoles e acompanhar suas reservas.
+    </td>
+    <td width="33%" valign="top" align="center">
+      <h3>🧑‍💼 Atendente</h3>
+      Funcionário responsável por cadastrar clientes presencialmente, analisar solicitações de locação, liberar locações, avaliar o histórico do cliente e registrar devoluções e multas.
+    </td>
+    <td width="33%" valign="top" align="center">
+      <h3>🛠️ Gerente</h3>
+      Funcionário responsável pela gestão do inventário e pelo cadastro de jogos, consoles e funcionários. Herda as permissões do atendente (generalização no diagrama de casos de uso).
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -60,31 +107,31 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 
 | Código | Descrição | Escopo | Prioridade |
 |---|---|---|---|
-| **RF01** | O sistema deve permitir que novos clientes realizem seu cadastro informando e-mail, senha e categoria. | Geral | Essencial |
-| **RF02** | O sistema deve permitir a consulta ao catálogo de jogos e consoles com filtros de busca. | Geral | Essencial |
-| **RF03** | O sistema deve permitir a reserva de jogos/consoles e a geração automática de TOKEN de retirada. | Geral | Essencial |
-| **RF04** | O sistema deve permitir a solicitação e a liberação de locações mediante validação financeira e de histórico. | Geral | Essencial |
-| **RF05** | O sistema deve registrar a devolução de itens e calcular multas por atraso quando aplicável. | Geral | Importante |
-| **RF06** | O sistema deve permitir ao gerente e ao atendente cadastrar jogos, consoles e funcionários e gerenciar o inventário. | Gestão | Essencial |
-| **RF07** | O sistema deve permitir que o usuário logado encerre sua sessão (logout). | Geral | Importante |
-| **RF08** | O sistema deve permitir que o usuário cadastrado acesse o sistema por meio de login com e-mail e senha. | Geral | Essencial |
+| **RF01** | O sistema deve permitir que novos clientes realizem seu cadastro informando e-mail, senha e categoria. | Geral | 🔴 Essencial |
+| **RF02** | O sistema deve permitir a consulta ao catálogo de jogos e consoles com filtros de busca. | Geral | 🔴 Essencial |
+| **RF03** | O sistema deve permitir a reserva de jogos/consoles e a geração automática de TOKEN de retirada. | Geral | 🔴 Essencial |
+| **RF04** | O sistema deve permitir a solicitação e a liberação de locações mediante validação financeira e de histórico. | Geral | 🔴 Essencial |
+| **RF05** | O sistema deve registrar a devolução de itens e calcular multas por atraso quando aplicável. | Geral | 🟡 Importante |
+| **RF06** | O sistema deve permitir ao gerente e ao atendente cadastrar jogos, consoles e funcionários e gerenciar o inventário. | Gestão | 🔴 Essencial |
+| **RF07** | O sistema deve permitir que o usuário logado encerre sua sessão (logout). | Geral | 🟡 Importante |
+| **RF08** | O sistema deve permitir que o usuário cadastrado acesse o sistema por meio de login com e-mail e senha. | Geral | 🔴 Essencial |
 
 ### 2.2. Requisitos Não Funcionais
 
 | Código | Descrição | Categoria |
 |---|---|---|
-| **RNF01** | O sistema deve validar os dados e realizar a autenticação do usuário em até 2 segundos. | Desempenho |
-| **RNF02** | O sistema deve manter a segurança e a privacidade das senhas e dos dados dos usuários, além de associar os TOKENs de retirada com segurança aos perfis. | Segurança |
-| **RNF03** | O sistema deve estar disponível via web/internet para consulta e reserva de catálogo. | Disponibilidade |
+| **RNF01** | O sistema deve validar os dados e realizar a autenticação do usuário em até 2 segundos. | ⚡ Desempenho |
+| **RNF02** | O sistema deve manter a segurança e a privacidade das senhas e dos dados dos usuários, além de associar os TOKENs de retirada com segurança aos perfis. | 🔒 Segurança |
+| **RNF03** | O sistema deve estar disponível via web/internet para consulta e reserva de catálogo. | 🌐 Disponibilidade |
 
 ### 2.3. Regras de Negócio
 
 | Código | Descrição | Escopo | Prioridade |
 |---|---|---|---|
-| **RN01** | Não é permitido cadastrar dois usuários com o mesmo e-mail no sistema. | Geral | Essencial |
-| **RN02** | A liberação de locação exige validação de pagamento, verificação de atrasos anteriores e ausência de pendências financeiras. | Locação | Essencial |
-| **RN03** | A reserva de jogos/consoles ou a liberação de locação gera obrigatoriamente um TOKEN de retirada. | Reserva/Locação | Essencial |
-| **RN04** | A devolução de itens em atraso gera cálculo de multa automática com base no histórico do cliente. | Devolução | Importante |
+| **RN01** | Não é permitido cadastrar dois usuários com o mesmo e-mail no sistema. | Geral | 🔴 Essencial |
+| **RN02** | A liberação de locação exige validação de pagamento, verificação de atrasos anteriores e ausência de pendências financeiras. | Locação | 🔴 Essencial |
+| **RN03** | A reserva de jogos/consoles ou a liberação de locação gera obrigatoriamente um TOKEN de retirada. | Reserva/Locação | 🔴 Essencial |
+| **RN04** | A devolução de itens em atraso gera cálculo de multa automática com base no histórico do cliente. | Devolução | 🟡 Importante |
 
 ---
 
@@ -92,15 +139,19 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 
 ### 3.1. Diagramas de Casos de Uso
 
-![Diagrama de Casos de Uso – Locadora Corujão Games](https://github.com/mthsrp10-dev/locadora-corujao-games/blob/main/docs/caso%20de%20uso%20uml.jpeg?raw=true)
+<p align="center">
+  <img src="https://github.com/mthsrp10-dev/locadora-corujao-games/blob/main/docs/caso%20de%20uso%20uml.jpeg?raw=true" alt="Diagrama de Casos de Uso – Locadora Corujão Games" width="90%">
+  <br>
+  <sub><i>Figura 1 – Diagrama de Casos de Uso da Locadora Corujão Games</i></sub>
+</p>
 
 **Atores:** Cliente, Atendente e Gerente (o Gerente herda do Atendente).
 
 | Ator | Casos de uso |
 |---|---|
-| Cliente | Realizar Cadastro, Consultar Catálogo de Jogos, Reservar Jogo, Solicitar Locação, Realizar Pagamento |
-| Atendente | Cadastrar Cliente, Analisar Solicitação de Locação, Registrar Devolução |
-| Gerente | Cadastrar Funcionário, Cadastrar Jogo/Console, Gerenciar Inventário de Jogos (além dos casos do Atendente) |
+| 👤 Cliente | Realizar Cadastro, Consultar Catálogo de Jogos, Reservar Jogo, Solicitar Locação, Realizar Pagamento |
+| 🧑‍💼 Atendente | Cadastrar Cliente, Analisar Solicitação de Locação, Registrar Devolução |
+| 🛠️ Gerente | Cadastrar Funcionário, Cadastrar Jogo/Console, Gerenciar Inventário de Jogos (além dos casos do Atendente) |
 
 **Relações `<<include>>`:**
 
@@ -114,7 +165,8 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 #### Especificação dos casos de uso
 
 <details>
-<summary><b>UC1 – Cadastrar</b></summary>
+<summary><b>📋 UC1 – Cadastrar</b></summary>
+<br>
 
 | Campo | Descrição |
 |---|---|
@@ -129,7 +181,8 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 </details>
 
 <details>
-<summary><b>UC2 – Consultar Catálogo de Jogos</b></summary>
+<summary><b>📋 UC2 – Consultar Catálogo de Jogos</b></summary>
+<br>
 
 | Campo | Descrição |
 |---|---|
@@ -143,7 +196,8 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 </details>
 
 <details>
-<summary><b>UC3 – Reservar Jogo (gera TOKEN de retirada)</b></summary>
+<summary><b>📋 UC3 – Reservar Jogo (gera TOKEN de retirada)</b></summary>
+<br>
 
 | Campo | Descrição |
 |---|---|
@@ -228,6 +282,10 @@ flowchart TD
 
 ---
 
-## 📌 Observações
+<div align="center">
 
-Documentação informal elaborada a partir do documento de requisitos no padrão ISO/IEC/IEEE 29148 do mesmo sistema.
+<sub>📌 Documentação informal elaborada a partir do documento de requisitos no padrão ISO/IEC/IEEE 29148 do mesmo sistema.</sub>
+
+<sub>Feito com 💚 pela equipe · UFAM/ICET · 2026</sub>
+
+</div>
