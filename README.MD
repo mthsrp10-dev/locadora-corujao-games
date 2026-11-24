@@ -92,7 +92,7 @@ Com o sistema, o **cliente** se cadastra, consulta o catálogo com filtros de bu
 
 ### 3.1. Diagramas de Casos de Uso
 
-![Diagrama de Casos de Uso – Locadora Corujão Games](imagens/casos-de-uso.png)
+![Diagrama de Casos de Uso – Locadora Corujão Games](https://github.com/mthsrp10-dev/locadora-corujao-games/blob/main/docs/caso%20de%20uso%20uml.jpeg?raw=true)
 
 **Atores:** Cliente, Atendente e Gerente (o Gerente herda do Atendente).
 
